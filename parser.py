@@ -44,7 +44,7 @@ def check_crypto_price():
         }
         headers = {
             'Accepts': 'application/json',
-            'X-CMC_PRO_API_KEY': '97746252-1f7c-434d-998a-9f43ffc99821',
+            'X-CMC_PRO_API_KEY': 'https://coinmarketcap.com/api',
         }
 
         session = Session()
