@@ -20,6 +20,8 @@ def check_crypto_price():
     lbl2.place(relx=0.45, rely=0.15)
     lbl3 = Label(root, text="Кол-во крипты")
     lbl3.place(relx=0.02, rely=0.3)
+    lbl4 = Label(root, text="Введите свой API")
+    lbl4.place(relx=0.02, rely=0.02)
 
     combo = Combobox(root)
     combo['values'] = ['RUB', 'USD', 'EUR']
@@ -34,6 +36,9 @@ def check_crypto_price():
     txt = Entry(root, width=10)
     txt.place(relx=0.2, rely=0.305)
 
+    txt2 = Entry(root, width=10)
+    txt2.place(relx=0.24, rely=0.02)
+
     def after_button():
 
         url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
@@ -44,7 +49,7 @@ def check_crypto_price():
         }
         headers = {
             'Accepts': 'application/json',
-            'X-CMC_PRO_API_KEY': 'https://coinmarketcap.com/api',
+            'X-CMC_PRO_API_KEY': txt2.get(),
         }
 
         session = Session()
